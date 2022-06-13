@@ -1,0 +1,12 @@
+<% for (let x in intrebari)   
+{ let c=0; %>
+   <p> <%= intrebari[x].intrebare %> </p>
+   <% for (const v of intrebari[x].variante)  
+   {  %>
+       <br>
+       <input type = "radio" name = "v<%= x %>"
+                             value = "<%= c++ %>" />
+           <%= v %>
+       <% 
+   }
+} %>

@@ -1,0 +1,32 @@
+{
+  "name": "package",
+  "version": "1.0.0",
+  "description": "Proiect 2",
+  "main": "app.js",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "body-parser": "^1.20.0",
+    "cookie-parser": "^1.4.6",
+    "ejs": "^3.1.8",
+    "express": "^4.18.1",
+    "express-ejs-layouts": "^2.5.1",
+    "express-session": "^1.17.3",
+    "jsdom": "^4.2.0",
+    "mysql": "^2.18.1",
+    "mysql2": "^2.3.3",
+    "oracledb": "^5.3.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HDR-2021-2022/proiect-2-AlexandruStefanAlbert.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HDR-2021-2022/proiect-2-AlexandruStefanAlbert/issues"
+  },
+  "homepage": "https://github.com/HDR-2021-2022/proiect-2-AlexandruStefanAlbert#readme"
+}

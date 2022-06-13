@@ -1,0 +1,27 @@
+<form method = "POST" action = "rezultat-chestionar">
+<% let corect = 0
+for (let x in intrebari)   
+ { let c=0; %>
+    <p> <%= intrebari[x].intrebare %> </p>
+    <% for (const v of intrebari[x].variante)  
+    {  %>
+        <br>
+        <input type = "radio" name = "v<%= x %>"
+                              value = "<%= c++ %>" >
+            <%= v %>
+        <% 
+        
+    }%>
+    
+    <%
+       if (intrebari[x].corect==c)
+             corect++;
+    %>
+
+    <%
+    
+} %>
+<br>
+   <input type = "submit" id="buton" value = "validare">
+
+</form>

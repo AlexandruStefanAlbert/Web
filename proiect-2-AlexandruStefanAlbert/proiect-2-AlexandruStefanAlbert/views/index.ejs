@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Magazin jucarii</title>
+    
+</head>
+<body>
+     <div style="text-align:right; padding-right: 30px;">
+    <% if (u==undefined && cookie==undefined)
+    {%>
+        Intra in cont!
+        <a href = "autentificare"> <input type ="submit" value = "Log In"></a>
+    <%}
+    
+    if(u!=undefined)
+    { %>
+        Bun venit, <b><%= u %></b>!
+        <form action = "logout">
+            <input type ="submit" value = "Logout"> 
+        <%
+    }
+    if(cookie!=undefined)
+    {  %>
+        Bun venit, <b><%= cookie %></b>!
+        <form action = "logout-admin">
+            <input type ="submit" value = "Logout"> 
+    <%
+    }   
+    %>
+
+        <br>
+       </div>
+       
+        </form>
+        
+
+    <%if(cookie!=undefined)
+        {%>
+            <form action = "creare-bd">
+            <input  type="submit" value="Creare BD" >
+    </form>
+        <form action="inserare-bd">
+            <input action = "inserare-bd" type="submit" value="Incarcare BD" >
+    </form>
+     
+        <h2>Adaugare produse: </h2>
+
+        <form method="POST" action="adaugare-produse">
+
+           idJucarie: <input type="text" name="idJucarie" required>
+            <br>
+            Model: <input type="text" name="model" required>
+            <br>
+            Pret: <input type="text"name="pret" required>
+            <br>
+            Cantitate: <input type="text" name="cantitate" required>
+            <br>
+            <input method="POST" action="adaugare-produse" type="submit" value= "Adauga produs">
+        </form>
+        <br>
+        
+        <%
+    }
+    else
+    { %>
+      <%
+      if(result.length>0)
+      {
+            result.forEach(function(data){
+                var sursa="/imagini/"+data.idJucarie+".JPG";
+         %>
+            
+             <div style="width: 250px; padding: 10px; border: 2px solid rgb(195, 148, 199); display: inline-block;">
+            <img src="<%=sursa%>" style="width:250px; height:220px">
+            
+             <%= data.model %>
+             <%= data.pret %> lei
+            </src>
+             <form method = "POST" action = "adaugare-cos">
+                
+             <input type = "submit" value = 'Add to cart' id="<%=data.idJucarie%>" style="background-color: rgb(6, 146, 29); color: aliceblue; font-size: 18px; font-weight: bold;">
+             <input type="hidden" name="id" value="<%=data.idJucarie%>">
+            </form> 
+            </div>
+         </tr>           
+            <% });
+      }
+      else
+      {
+          %>
+          <tr>
+                <td colspan="5">No Data Found</td>
+          </tr>
+    <% }
+        %>
+    </table>    
+    <%
+    }%>
+</body>
+</html>
+
+
+   

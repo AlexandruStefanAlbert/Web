@@ -1,0 +1,41 @@
+<body><%
+    if(shopItems.length==0)
+    { %>
+        <h1>Cosul este gol</h1>
+    <%}
+    else
+    {
+    let c=0;
+      if(cos.length>0)
+      {
+            cos.forEach(function(data){
+                c++;
+                var sursa="/imagini/"+data.idJucarie+".JPG";
+         %>
+            
+             <div style="width: 250px; padding: 10px; border: 2px solid rgb(195, 148, 199); ">
+            <img src="<%=sursa%>" style="width:250px; height:220px">
+             <%=c%>. <%= data.model %>
+             <%= data.pret %> lei
+             
+             
+            </div>
+         </tr>           
+            <% });
+      }
+      else
+      {
+          %>
+          <tr>
+                <td colspan="5">No Data Found</td>
+          </tr>
+    <% }
+        
+        %>
+
+        <form method = "POST" action = "golire-cos">
+                
+            <input type = "submit" value = 'Golire cos' id="gol" style="background-color: rgb(6, 146, 29); color: aliceblue; font-size: 18px; font-weight: bold;">
+          <%
+    }%>  
+    </body>
